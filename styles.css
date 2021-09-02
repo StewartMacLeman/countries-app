@@ -1,3 +1,75 @@
+html {
+  font-size: 16px;
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+h1 {font-size: 4rem;}
+h2 {font-size: 2.5rem;}
+p {font-size: 1rem;}
+
+h1, h2, p {
+  font-family: futura, helvetica, sans-serif;
+  text-align: center;
+  margin: 0 auto;
+  padding: .15rem;
+}
+
 body {
-  background-color: pink;
+  background-image: linear-gradient(azure 50%, powderblue 50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Main countries container. --------------------------------- */
+.countriesContainer {
+  background-color: white;
+  border: .25rem solid grey;
+  width: 95vw;
+  height: 70vh;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-content: flex-start;
+  padding: .25rem;
+}
+/* Individual countries containers. ---------------------------- */
+.countryContainer {
+  border: .15rem solid black;
+  min-width: 47%;
+  height: 17rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: .15rem;
+  margin-top: .5rem;
+  background-color: linen;
+}
+.countryInfo, .countryFlag {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: .25rem;
+}
+.highlight {
+  text-decoration: underline;
+}
+.countryFlag {
+}
+.countryFlag img {
+  width: 13.4375rem;
+  height: 8.125rem;
+}
+/* Media queries.----------------------------------------------- */
+@media screen and (max-width: 899px){
+  html { font-size: 12px; }
+}
+@media screen and (max-width: 799px){
+  html { font-size: 10px; }
+}
+@media screen and (max-width: 699px){
+  html { font-size: 8px; }
 }
