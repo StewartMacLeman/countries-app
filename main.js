@@ -7,7 +7,7 @@ let mainCountriesCont = document.querySelector('.countriesContainer');
 
 function getCountriesApi(){
 
-  fetch("https://restcountries.eu/rest/v2/all")
+  fetch("https://restcountries.com/v3.1/all")
   .then(res => {
     if (!res.ok) {
       throw Error('error')
@@ -19,17 +19,31 @@ function getCountriesApi(){
   .then(data => {
     let countries = data.map(country => {
       let countryObject = {
-        name: country.name,
+        name: country.name.common,
         capital: country.capital,
         population: country.population,
         region: country.region,
         subRegion: country.subregion,
-        flag: country.flag
+        flag: country.flags.png
       }
     return countryObject;
     })
+    let sortedCountries = countries.sort((a, b) => {
+        let nameA = a.name;
+        let nameB = b.name;
+
+        if (nameA > nameB){
+          return 1
+        }
+        if (nameA < nameB){
+          return -1
+        }
+        if (nameA === nameB){
+          return 0
+        }
+      })
     console.log(`A country object example:`, countries[0]);
-    country(countries);
+    country(sortedCountries);
   })
   .catch(error => console.log(error));
 }
