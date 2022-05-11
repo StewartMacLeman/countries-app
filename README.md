@@ -2,7 +2,7 @@
 
 This is a simple web-application that displays the countries of the world; sourced from an API.
 
-## Build with:
+## Built with:
 * JavaScript
 * CSS
 * HTML
